@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Github Viewer</title>
+</head>
+<body>
+{% if user.is_authenticated %}
+Hi: {{ user }}
+Test
+{% else %}
+<p>Please <a href="{% url "social:begin" "github" %}">Authenticated with GitHub</a></p>
+{% endif %}
+</body>
+</html>
