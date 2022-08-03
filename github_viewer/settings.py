@@ -31,7 +31,8 @@ SECRET_KEY = 'django-insecure-gsw+n)mc*gd8cwj50as-p%l#s5_@@_v-_+p2jradjaqyd9u(qx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
 
 
 # Application definition
@@ -79,12 +80,7 @@ WSGI_APPLICATION = 'github_viewer.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+DATABASES = {'default': env.db()}
 
 
 # Password validation
