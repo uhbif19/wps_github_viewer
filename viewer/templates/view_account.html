@@ -5,11 +5,19 @@
     <title>Github Viewer</title>
 </head>
 <body>
+    <div>
 {% if user.is_authenticated %}
-Hi: {{ user }}
-Test
+
+<p>Hi!</p>
+
+<p>
+    Username: <a href="https://github.com/{{user_data.login}}">{{user_data.login}}</a>
+    <img width=25 height=25 src="{{user_data.avatar_url}}"/>
+</p>
+
 {% else %}
 <p>Please <a href="{% url "social:begin" "github" %}">Authenticated with GitHub</a></p>
 {% endif %}
+    </div>
 </body>
 </html>
