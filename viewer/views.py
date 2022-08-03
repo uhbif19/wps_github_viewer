@@ -13,4 +13,8 @@ class ViewAccount(TemplateView):
         access_token = user_auth.extra_data['access_token']
         client = GithubClient(access_token)
         user_data = client.get_user_data()
-        return dict(user_data=user_data)
+        if user_data is None:
+            repos = []
+        else:
+            repos = client.get_repos(user_data)
+        return dict(user_data=user_data, repos=repos)
