@@ -137,13 +137,13 @@ INSTALLED_APPS.extend(
         'social_django',
     ]
 )
-SOCIAL_AUTH_JSONFIELD_ENABLED = True
-
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'social_core.backends.github.GithubOAuth2',
 ]
 
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = "/"
+SOCIAL_AUTH_JSONFIELD_ENABLED = True
 SOCIAL_AUTH_GITHUB_KEY = env('GITHUB_CLIENT_ID')
 SOCIAL_AUTH_GITHUB_SECRET = env('GITHUB_SECRET')
